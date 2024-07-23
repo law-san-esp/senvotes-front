@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-let baseURL = import.meta.env.PROD_API_URL || 'http://localhost:3000';
+let baseURL = import.meta.env.PROD_API_URL || 'http://localhost:3000/api';
 if (import.meta.env.NODE_ENV == 'DEV') {
-  baseURL = import.meta.env.DEV_API_URL || 'http://localhost:3000';
+  baseURL = import.meta.env.DEV_API_URL || 'http://localhost:3000/api';
 }
 
 
