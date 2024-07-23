@@ -1,9 +1,8 @@
 import axios from 'axios';
-require('dotenv').config({path:'./.env'});
 
-let baseURL = process.env.PROD_API_URL || 'http://localhost:3001';
-if (process.env.NODE_ENV == 'DEV') {
-  baseURL = process.env.DEV_API_URL || 'http://localhost:3001';
+let baseURL = import.meta.env.PROD_API_URL || 'http://localhost:3001';
+if (import.meta.env.NODE_ENV == 'DEV') {
+  baseURL = import.meta.env.DEV_API_URL || 'http://localhost:3001';
 }
 
 

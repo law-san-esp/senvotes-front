@@ -11,6 +11,7 @@ import Admin from './pages/Admin';
 import { AuthProvider, AuthContext } from './context/AuthContext';
 import Navbar from './components/Navbar';
 
+
 const ProtectedRoute: React.FC<{ children: React.ReactElement }> = ({ children }) => {
   const authContext = React.useContext(AuthContext);
 
