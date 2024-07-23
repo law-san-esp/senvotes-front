@@ -20,6 +20,9 @@ const Verification: React.FC = () => {
     try {
       const response = await verify({ code, user_token });
       setAuthTokens(response.data.authToken);
+      console.log("auth token: ", response.data.authToken);
+      //set a token in local storage
+      localStorage.setItem('authTokens', response.data.authToken);
       navigate('/dashboard');
     } catch (error) {
       if (error instanceof AxiosError) {

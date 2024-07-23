@@ -19,33 +19,32 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-gray-800 p-4 text-white flex justify-between items-center">
-      <Link 
-        to="/" 
-        className={`text-2xl font-bold ${user && user.role === 'ADMIN' ? 'text-red' : 'text-normal'}`}
-      >
-        SENVOTES
-      </Link>
-      <div className="flex space-x-4">
+      <div className="flex items-center">
+        <Link 
+          to="/dashboard" 
+          className={`text-2xl font-bold ${user && user.role === 'ADMIN' ? 'text-red-500' : 'text-white'}`}
+        >
+          SENVOTES
+        </Link>
+      </div>
+      <div className="flex items-center space-x-4">
         {user ? (
           <>
             {user.role === 'CLIENT' && (
-              <>
-                <Link to="/dashboard">Dashboard</Link>
-                <Link to="/vote">Vote</Link>
-              </>
+              <Link to="/dashboard" className="text-white">Dashboard</Link>
             )}
             {user.role === 'ADMIN' && (
               <>
-                <Link to="/dashboard">Dashboard</Link>
-                <Link to="/admin">Admin</Link>
+                <Link to="/dashboard" className="text-white">Dashboard</Link>
+                <Link to="/admin" className="text-white">Nouvel évènement</Link>
               </>
             )}
             <button onClick={handleLogout} className="bg-red-600 px-4 py-2 rounded">Déconnexion</button>
           </>
         ) : (
           <>
-            <Link to="/login">Connexion</Link>
-            <Link to="/register">Inscription</Link>
+            <Link to="/login" className="text-white">Connexion</Link>
+            <Link to="/register" className="text-white">Inscription</Link>
           </>
         )}
       </div>

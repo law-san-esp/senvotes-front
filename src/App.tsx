@@ -10,12 +10,18 @@ import Vote from './pages/Vote';
 import Admin from './pages/Admin';
 import { AuthProvider, AuthContext } from './context/AuthContext';
 import Navbar from './components/Navbar';
+import Results from './pages/Results';
 
 
 const ProtectedRoute: React.FC<{ children: React.ReactElement }> = ({ children }) => {
   const authContext = React.useContext(AuthContext);
+  const authToken = localStorage.getItem('authTokens');
+  if (authToken) {
+    authContext?.setAuthTokens(authToken);
+  }
 
   if (!authContext || !authContext.user) {
+    //check cookies for authToken
     return <Navigate to="/login" />;
   }
 
@@ -46,6 +52,14 @@ const App: React.FC = () => {
               element={
                 <ProtectedRoute>
                   <Vote />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/results/:id"
+              element={
+                <ProtectedRoute>
+                  <Results />
                 </ProtectedRoute>
               }
             />
