@@ -1,7 +1,14 @@
 import axios from 'axios';
+require('dotenv').config({path:'./.env'});
+
+let baseURL = process.env.PROD_API_URL || 'http://localhost:3001';
+if (process.env.NODE_ENV == 'DEV') {
+  baseURL = process.env.DEV_API_URL || 'http://localhost:3001';
+}
+
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: baseURL,
 });
 
 api.interceptors.request.use((config) => {
