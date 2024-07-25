@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+certs
+.pem
+*.pem
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
