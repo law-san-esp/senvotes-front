@@ -3,15 +3,15 @@
 ## Description
 SENVOTES est une application de vote électronique sécurisée développée avec React. Cette application permet aux utilisateurs de s'inscrire, se connecter, participer à des événements de vote et consulter les résultats.
 
-## Technologies Utilisées
+## Apperçu des technologies Utilisées
 - React
-- TypeScript
-- Vite
-- Tailwind CSS
+- TypeScript (Ts > Js en vrai)
+- Vite (Plus efficace que pour le développement)
+- Tailwind CSS (parce que CSS c'est fatiguant...)
 - Axios pour les requêtes HTTP
 - React Router pour la navigation
 - JWT pour l'authentification
-- notistack pour les notifications
+- notistack pour les notifications (pas encore implémenté)
 
 ## Prérequis
 - Node.js (version 14 ou supérieure)
@@ -41,43 +41,11 @@ SENVOTES est une application de vote électronique sécurisée développée avec
    ```sh
    npm run dev
    ```
-
-## Structure du Projet
-
-```
-senvotes-frontend/
-├── public/
-├── src/
-│   ├── api/
-│   │   └── api.ts
-│   ├── components/
-│   │   └── Navbar.tsx
-│   ├── context/
-│   │   └── AuthContext.tsx
-│   ├── hooks/
-│   │   └── useAuth.ts
-│   ├── pages/
-│   │   ├── Admin.tsx
-│   │   ├── Dashboard.tsx
-│   │   ├── Home.tsx
-│   │   ├── Login.tsx
-│   │   ├── Register.tsx
-│   │   ├── Results.tsx
-│   │   ├── Verification.tsx
-│   │   └── Vote.tsx
-│   ├── App.tsx
-│   ├── index.css
-│   ├── main.tsx
-│   └── vite-env.d.ts
-├── .env
-├── .gitignore
-├── index.html
-├── package.json
-├── README.md
-├── tailwind.config.js
-├── tsconfig.json
-└── vite.config.ts
-```
+   ```sh
+   npm run prod
+   #A exécuter dans l'environnement de prod, ajoute l'option d'exposition du serveur 
+   ```
+   
 
 ## Pages
 
@@ -129,13 +97,12 @@ senvotes-frontend/
 
 ## Déploiement
 
-Pour déployer cette application, assurez-vous que les variables d'environnement sont correctement configurées sur votre serveur de production. Utilisez des outils comme Vercel ou Netlify pour déployer l'application React.
+Pour déployer cette application, assurez-vous que les variables d'environnement sont correctement configurées sur votre serveur de production. L'application est configurée de manière à pouvoir être déployée avec Vercel, importez le projet github sur votre Vercel et suivez-y les instructions !!
 
 ## Contributeurs
-- **Nom de l'Utilisateur** - Développeur Principal
+- **Mouhamed Lawal DAN AZOUMIr**
+- **Gilbert GOMIS**
+- **Maïmouna SAMB**
 
 ## Licence
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
-
-Ce fichier `README.md` fournit une vue d'ensemble complète de votre projet frontend SENVOTES, facilitant ainsi la compréhension, la configuration et l'utilisation de votre application pour d'autres développeurs. Assurez-vous de mettre à jour les informations spécifiques, comme les URLs de dépôt et les noms des contributeurs, selon vos besoins.
+Ce projet est sous licence SENVOTES. Voir le fichier `LICENSE` pour plus de détails.(il existe pas encore haha...)
