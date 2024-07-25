@@ -33,8 +33,12 @@ SENVOTES est une application de vote électronique sécurisée développée avec
 3. Configurez les variables d'environnement :
    Créez un fichier `.env` à la racine du projet et ajoutez les variables suivantes :
    ```env
-   VITE_API_URL=https://senvotes-express.vercel.app/api
-   VITE_JWT_SECRET=your-jwt-secret
+   VITE_DEV_API_URL=dev-api-url
+   VITE_JWT_SECRET=3303361d3469c328b08ea36c34671c5a7fd424bf4f53a792a08b6e6639e55539
+   VITE_PORT=3001   
+   VITE_PROD_API_URL=prod-api-url
+   VITE_VERCEL_API_URL=Vercel-api-url
+   VITE_NODE_ENV=PROD-DEV-or-VERCEL
    ```
 
 4. Démarrez le serveur de développement :
