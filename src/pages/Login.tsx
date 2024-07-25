@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../api/api';
 import Loader from '../components/Loader';
-import { useAuth } from '../hooks/useAuth';
 import { AxiosError } from 'axios';
 
 const Login: React.FC = () => {
@@ -10,7 +9,6 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { setAuthTokens } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
