@@ -1,12 +1,37 @@
 import axios from 'axios';
 
-let baseURL = import.meta.env.VITE_PROD_API_URL || 'http://localhost:3000/api';
-if (import.meta.env.VITE_NODE_ENV == 'DEV') {
-  baseURL = import.meta.env.VITE_DEV_API_URL || 'http://localhost:3000/api';
+// let baseURL = import.meta.env.VITE_PROD_API_URL || 'http://localhost:3000/api';
+// if (import.meta.env.VITE_NODE_ENV == 'DEV') {
+//   baseURL = import.meta.env.VITE_DEV_API_URL || 'http://localhost:3000/api';
+// }
+// if(import.meta.env.VITE_NODE_ENV == 'VERCEL') {
+//   baseURL = import.meta.env.VITE_VERCEL_API_URL || 'https://voting-app-frontend.vercel.app/api';
+// }
+
+// let baseURL = switch (import.meta.env.VITE_NODE_ENV) {
+//   case 'DEV':
+//     import.meta.env.VITE_DEV_API_URL || 'http://localhost:3000/api';
+//     break;
+//   case 'VERCEL':
+//     import.meta.env.VITE_VERCEL_API_URL || 'https://voting-app-frontend.vercel.app/api';
+//     break;
+//   default:
+//     import.meta.env.VITE_PROD_API_URL || 'http://localhost:3000/api';
+// }
+
+const getBaseUrl = () => {
+  switch (import.meta.env.VITE_NODE_ENV) {
+    case 'DEV':
+      return import.meta.env.VITE_DEV_API_URL ;
+    case 'VERCEL':
+      return import.meta.env.VITE_VERCEL_API_URL ;
+    default:
+      return import.meta.env.VITE_PROD_API_URL ;
+  }
 }
-if(import.meta.env.VITE_NODE_ENV == 'VERCEL') {
-  baseURL = import.meta.env.VITE_VERCEL_API_URL || 'https://voting-app-frontend.vercel.app/api';
-}
+
+const baseURL = getBaseUrl();
+
 
 const api = axios.create({
   baseURL: baseURL,
